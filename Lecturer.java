@@ -75,10 +75,6 @@ public class Lecturer extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnatt = new javax.swing.JButton();
         course = new javax.swing.JPanel();
-        attendance = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        stuatt = new javax.swing.JTable();
-        btnatt_sum = new javax.swing.JButton();
         addmat = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -89,6 +85,10 @@ public class Lecturer extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        attendance = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        stuatt = new javax.swing.JTable();
+        btnatt_sum = new javax.swing.JButton();
         pnlexam = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -612,63 +612,6 @@ public class Lecturer extends javax.swing.JFrame {
 
         course.setLayout(new java.awt.CardLayout());
 
-        attendance.setBackground(new java.awt.Color(102, 51, 0));
-
-        stuatt.setBackground(new java.awt.Color(255, 255, 153));
-        stuatt.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Student ID", "Date", "Student Level", "Course ID", "Course Type", "Status"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane4.setViewportView(stuatt);
-
-        btnatt_sum.setBackground(new java.awt.Color(102, 51, 0));
-        btnatt_sum.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        btnatt_sum.setForeground(new java.awt.Color(255, 255, 255));
-        btnatt_sum.setText("Get Attendance Summary");
-        btnatt_sum.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnatt_sumActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout attendanceLayout = new javax.swing.GroupLayout(attendance);
-        attendance.setLayout(attendanceLayout);
-        attendanceLayout.setHorizontalGroup(
-            attendanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(attendanceLayout.createSequentialGroup()
-                .addGroup(attendanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(attendanceLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(attendanceLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(btnatt_sum, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
-        attendanceLayout.setVerticalGroup(
-            attendanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(attendanceLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnatt_sum)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-
-        course.add(attendance, "card3");
-
         addmat.setBackground(new java.awt.Color(102, 51, 0));
 
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
@@ -769,6 +712,63 @@ public class Lecturer extends javax.swing.JFrame {
         );
 
         course.add(addmat, "card2");
+
+        attendance.setBackground(new java.awt.Color(102, 51, 0));
+
+        stuatt.setBackground(new java.awt.Color(255, 255, 153));
+        stuatt.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Student ID", "Date", "Student Level", "Course ID", "Course Type", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(stuatt);
+
+        btnatt_sum.setBackground(new java.awt.Color(102, 51, 0));
+        btnatt_sum.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        btnatt_sum.setForeground(new java.awt.Color(255, 255, 255));
+        btnatt_sum.setText("Get Attendance Summary");
+        btnatt_sum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnatt_sumActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout attendanceLayout = new javax.swing.GroupLayout(attendance);
+        attendance.setLayout(attendanceLayout);
+        attendanceLayout.setHorizontalGroup(
+            attendanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(attendanceLayout.createSequentialGroup()
+                .addGroup(attendanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(attendanceLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(attendanceLayout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(btnatt_sum, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+        attendanceLayout.setVerticalGroup(
+            attendanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(attendanceLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnatt_sum)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+
+        course.add(attendance, "card3");
 
         javax.swing.GroupLayout pnlcourseLayout = new javax.swing.GroupLayout(pnlcourse);
         pnlcourse.setLayout(pnlcourseLayout);
@@ -1351,6 +1351,9 @@ public class Lecturer extends javax.swing.JFrame {
         pnlCrd.add(pnlcourse);
         pnlCrd.repaint();
         pnlCrd.revalidate();  
+        student.setVisible(false);
+        exam.setVisible(false);
+        noticeview.setVisible(false);
         
         // TODO add your handling code here:
     }//GEN-LAST:event_btncourseActionPerformed
@@ -1359,14 +1362,20 @@ public class Lecturer extends javax.swing.JFrame {
         pnlCrd.removeAll();
         pnlCrd.add(pnlexam);
         pnlCrd.repaint();
-        pnlCrd.revalidate();  // TODO add your handling code here:
+        pnlCrd.revalidate();
+        student.setVisible(false);
+        course.setVisible(false);
+        noticeview.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_btnexamActionPerformed
 
     private void btnmoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmoreActionPerformed
         pnlCrd.removeAll();
         pnlCrd.add(pnlothers);
         pnlCrd.repaint();
-        pnlCrd.revalidate();          // TODO add your handling code here:
+        pnlCrd.revalidate();
+        student.setVisible(false);
+        exam.setVisible(false);
+        course.setVisible(false);
     }//GEN-LAST:event_btnmoreActionPerformed
 
     private void btnstudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstudentActionPerformed
@@ -1374,7 +1383,10 @@ public class Lecturer extends javax.swing.JFrame {
         pnlCrd.removeAll();
         pnlCrd.add(pnlstudent);
         pnlCrd.repaint();
-        pnlCrd.revalidate(); 
+        pnlCrd.revalidate();
+        course.setVisible(false);
+        exam.setVisible(false);
+        noticeview.setVisible(false);
     }//GEN-LAST:event_btnstudentActionPerformed
 
     private void btnviewMedicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewMedicalActionPerformed
